@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "edits",
+  "info": {
+    "singularName": "edit",
+    "pluralName": "edits",
+    "displayName": "Edit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending Review",
+        "Approved",
+        "Rejected"
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "newContent": {
+      "type": "string"
+    },
+    "currentContent": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "edits"
+    },
+    "work": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work.work",
+      "inversedBy": "edits"
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::collection.collection",
+      "inversedBy": "edits"
+    },
+    "publisher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publisher.publisher",
+      "inversedBy": "edits"
+    },
+    "composer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composer.composer",
+      "inversedBy": "edits"
+    },
+    "field": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "reasonRejected": {
+      "type": "text"
+    }
+  }
+}

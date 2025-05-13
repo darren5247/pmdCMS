@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visibilities",
+  "info": {
+    "singularName": "visibility",
+    "pluralName": "visibilities",
+    "displayName": "Visibility"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "currentVisibility": {
+      "type": "string",
+      "required": true,
+      "default": "unlisted"
+    },
+    "lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list.list",
+      "mappedBy": "visibility"
+    },
+    "eras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::era.era",
+      "mappedBy": "visibility"
+    }
+  }
+}

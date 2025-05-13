@@ -1,0 +1,110 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publishers",
+  "info": {
+    "singularName": "publisher",
+    "pluralName": "publishers",
+    "displayName": "Publisher",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "publishers"
+    },
+    "series": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sequence.sequence",
+      "mappedBy": "publishers"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "publishers"
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "publishers"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "publishers"
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 1000
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "adminReview": {
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "Reviewed",
+        "Issue",
+        "Complete"
+      ]
+    },
+    "urlSocialInstagram": {
+      "type": "string"
+    },
+    "urlSocialFacebook": {
+      "type": "string"
+    },
+    "urlSocialX": {
+      "type": "string"
+    },
+    "urlSocialLinkedIn": {
+      "type": "string"
+    },
+    "urlSpotify": {
+      "type": "string"
+    },
+    "urlAppleMusic": {
+      "type": "string"
+    },
+    "urlWebsite": {
+      "type": "string"
+    },
+    "urlSocialYouTube": {
+      "type": "string"
+    },
+    "imageSEO": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "edits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::edit.edit",
+      "mappedBy": "publisher"
+    }
+  }
+}

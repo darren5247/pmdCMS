@@ -1,0 +1,127 @@
+{
+  "kind": "collectionType",
+  "collectionName": "composers",
+  "info": {
+    "singularName": "composer",
+    "pluralName": "composers",
+    "displayName": "Composer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 1000
+    },
+    "birth_year": {
+      "type": "string"
+    },
+    "death_year": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "composers"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "composers"
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "composers"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "composers"
+    },
+    "adminReview": {
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "Reviewed",
+        "Issue",
+        "Complete"
+      ]
+    },
+    "urlSocialInstagram": {
+      "type": "string"
+    },
+    "urlSocialFacebook": {
+      "type": "string"
+    },
+    "urlSocialX": {
+      "type": "string"
+    },
+    "urlSocialLinkedIn": {
+      "type": "string"
+    },
+    "urlSpotify": {
+      "type": "string"
+    },
+    "urlAppleMusic": {
+      "type": "string"
+    },
+    "urlWebsite": {
+      "type": "string"
+    },
+    "urlSocialYouTube": {
+      "type": "string"
+    },
+    "imageSEO": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gender": {
+      "type": "string"
+    },
+    "pronouns": {
+      "type": "string"
+    },
+    "ethnicity": {
+      "type": "string"
+    },
+    "edits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::edit.edit",
+      "mappedBy": "composer"
+    },
+    "eras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::era.era",
+      "mappedBy": "composers"
+    }
+  }
+}

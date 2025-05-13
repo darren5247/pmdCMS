@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "promoted_works",
+  "info": {
+    "singularName": "promoted-work",
+    "pluralName": "promoted-works",
+    "displayName": "Promoted Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sponsoredWork": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sponsored-work.sponsored-work"
+    }
+  }
+}

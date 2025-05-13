@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "moods",
+  "info": {
+    "singularName": "mood",
+    "pluralName": "moods",
+    "displayName": "Mood",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "popularFiltersIndex": {
+      "type": "integer"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "moods"
+    }
+  }
+}

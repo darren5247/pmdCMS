@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sequences",
+  "info": {
+    "singularName": "sequence",
+    "pluralName": "sequences",
+    "displayName": "Series",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "series"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "series"
+    },
+    "publishers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publisher.publisher",
+      "inversedBy": "series"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "subscribedToNewsletter": {
+      "type": "boolean"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "users"
+    },
+    "userType": {
+      "type": "string"
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "users"
+    },
+    "acceptedTerms": {
+      "type": "boolean"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "user"
+    },
+    "composers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composer.composer",
+      "mappedBy": "users"
+    },
+    "publishers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publisher.publisher",
+      "mappedBy": "users"
+    },
+    "userOccupation": {
+      "type": "string"
+    },
+    "works_ignore_notifications": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work.work"
+    },
+    "composers_ignore_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composer.composer"
+    },
+    "publishers_ignore_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publisher.publisher"
+    },
+    "collections_ignore_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection"
+    },
+    "works_watch_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work.work"
+    },
+    "composers_watch_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composer.composer"
+    },
+    "publishers_watch_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publisher.publisher"
+    },
+    "collection_watch_notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection"
+    },
+    "ignoreAllNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreAllWorksNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreAllComposersNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreAllPublishersNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreAllCollectionsNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "edits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::edit.edit",
+      "mappedBy": "user"
+    },
+    "subscriptionStatus": {
+      "type": "string"
+    },
+    "subscriptionPlan": {
+      "type": "string"
+    },
+    "subscriptionId": {
+      "type": "string"
+    },
+    "stripeCustomerId": {
+      "type": "uid"
+    },
+    "notificationPreferences": {
+      "type": "component",
+      "component": "notification.preferences",
+      "required": false
+    },
+    "lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list.list",
+      "mappedBy": "users"
+    },
+    "nameLast": {
+      "type": "string"
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::favorite.favorite",
+      "mappedBy": "user"
+    },
+    "firstLogIn": {
+      "type": "boolean",
+      "default": false
+    },
+    "lists_owned": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list.list",
+      "mappedBy": "owners"
+    }
+  }
+}

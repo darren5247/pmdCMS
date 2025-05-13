@@ -1,0 +1,71 @@
+{
+  "collectionName": "components_notification_preferences",
+  "info": {
+    "displayName": "Notification Preferences",
+    "description": "User notification preferences",
+    "displayOptions": {
+      "layout": "grid"
+    }
+  },
+  "options": {
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "notificationsEnabled",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "workNotifications",
+            "size": 6
+          },
+          {
+            "name": "editNotifications",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "workNotificationPreferences",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "editNotificationPreferences",
+            "size": 12
+          }
+        ]
+      ]
+    }
+  },
+  "attributes": {
+    "notificationsEnabled": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "workNotifications": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "workNotificationPreferences": {
+      "type": "component",
+      "component": "notification.work-preferences",
+      "required": true
+    },
+    "editNotifications": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "editNotificationPreferences": {
+      "type": "component",
+      "component": "notification.edit-preferences",
+      "required": true
+    }
+  }
+} 

@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage_banners",
+  "info": {
+    "singularName": "homepage-banner",
+    "pluralName": "homepage-banners",
+    "displayName": "Homepage Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "BannerLink": {
+      "type": "string",
+      "required": false
+    },
+    "BannerLinkTitle": {
+      "type": "string"
+    }
+  }
+}

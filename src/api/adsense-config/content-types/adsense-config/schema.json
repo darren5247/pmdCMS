@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "adsense_configs",
+  "info": {
+    "singularName": "adsense-config",
+    "pluralName": "adsense-configs",
+    "displayName": "AdSense Configuration",
+    "description": "Google AdSense configuration settings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "publisherId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "adUnits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ads.ad-unit",
+      "required": true
+    }
+  }
+} 

@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lists",
+  "info": {
+    "singularName": "list",
+    "pluralName": "lists",
+    "displayName": "List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 144
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 255
+    },
+    "details": {
+      "type": "richtext",
+      "maxLength": 2000
+    },
+    "visibility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::visibility.visibility",
+      "inversedBy": "lists"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "lists"
+    },
+    "list_works": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-work.list-work",
+      "mappedBy": "list"
+    },
+    "owners": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "lists_owned"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "community": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_ads_ad_units",
+  "info": {
+    "displayName": "Ad Unit",
+    "description": "Configuration for individual ad units"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "slot": {
+      "type": "string",
+      "required": true
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "horizontal",
+        "vertical",
+        "rectangle"
+      ],
+      "default": "auto",
+      "required": true
+    },
+    "responsive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "work_page_above_video",
+        "work_page_below_video",
+        "home_page_top"
+      ],
+      "required": true
+    }
+  }
+} 

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_links",
+  "info": {
+    "singularName": "purchase-link",
+    "pluralName": "purchase-links",
+    "displayName": "Purchase Link",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sellerName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "sellerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "purchase_links"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "purchase_links"
+    }
+  }
+}

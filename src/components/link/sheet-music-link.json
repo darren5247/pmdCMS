@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_link_sheet_music_links",
+  "info": {
+    "displayName": "Sheet Music Link",
+    "icon": "external-link-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sellerName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "sellerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}

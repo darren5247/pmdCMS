@@ -1,0 +1,178 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "purchase_link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.sheet-music-link"
+    },
+    "publishers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publisher.publisher",
+      "inversedBy": "collections"
+    },
+    "score": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "score_link": {
+      "type": "string"
+    },
+    "catalogue_number": {
+      "type": "string"
+    },
+    "series": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sequence.sequence",
+      "inversedBy": "collections"
+    },
+    "published_date": {
+      "type": "string"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "inversedBy": "collections"
+    },
+    "adminNotes": {
+      "type": "string"
+    },
+    "adminStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Issue",
+        "Complete",
+        "Incomplete",
+        "In-Progress",
+        "For Review",
+        "Reviewed"
+      ]
+    },
+    "purchase_linkStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Issue",
+        "Complete"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "composers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composer.composer",
+      "inversedBy": "collections"
+    },
+    "isbn_10": {
+      "type": "string"
+    },
+    "isbn_13": {
+      "type": "string"
+    },
+    "videoYouTube": {
+      "type": "string"
+    },
+    "composed_date": {
+      "type": "string"
+    },
+    "imageSEO": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "collections"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "collections"
+    },
+    "adminReview": {
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "Reviewed",
+        "Issue",
+        "Complete"
+      ]
+    },
+    "urlSpotify": {
+      "type": "string"
+    },
+    "urlAppleMusic": {
+      "type": "string"
+    },
+    "urlWebsite": {
+      "type": "string"
+    },
+    "edits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::edit.edit",
+      "mappedBy": "collection"
+    },
+    "eras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::era.era",
+      "mappedBy": "collections"
+    },
+    "holidays": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::holiday.holiday",
+      "mappedBy": "collections"
+    },
+    "instrumentations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::instrumentation.instrumentation",
+      "mappedBy": "collections"
+    },
+    "purchase_links": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::purchase-link.purchase-link",
+      "mappedBy": "collections"
+    }
+  }
+}

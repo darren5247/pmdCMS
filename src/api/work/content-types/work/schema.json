@@ -1,0 +1,504 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true,
+      "maxLength": 2048
+    },
+    "score": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "measureCount": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": false,
+      "max": 9999
+    },
+    "hasLyrics": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "required": false
+    },
+    "yearPublished": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "maxLength": 10
+    },
+    "elements": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::element.element",
+      "mappedBy": "works"
+    },
+    "Era": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Twentieth Century",
+        "Baroque",
+        "Classical",
+        "Modern",
+        "Romantic",
+        "none",
+        "Medieval",
+        "Renaissance",
+        "Late Romantic"
+      ]
+    },
+    "sheetMusicLinks": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "link.sheet-music-link"
+      ]
+    },
+    "Holiday": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Christmas",
+        "Easter",
+        "Halloween",
+        "Fourth of July",
+        "None"
+      ]
+    },
+    "videoEmbedCode": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "richtext",
+      "maxLength": 2048
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "alternateTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "maxLength": 2048
+    },
+    "publishers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publisher.publisher",
+      "inversedBy": "works"
+    },
+    "instrumentation": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Solo Piano",
+        "Four Hands",
+        "Piano and Cello",
+        "Two Pianos",
+        "Piano Ensemble"
+      ]
+    },
+    "styles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::style.style",
+      "inversedBy": "works"
+    },
+    "level": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::level.level",
+      "inversedBy": "works"
+    },
+    "moods": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::mood.mood",
+      "inversedBy": "works"
+    },
+    "teachingTips": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teaching-tip.teaching-tip",
+      "inversedBy": "works"
+    },
+    "series": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sequence.sequence",
+      "inversedBy": "works"
+    },
+    "hasTeacherDuet": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
+    "themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theme.theme",
+      "inversedBy": "works"
+    },
+    "excerptStatus": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "None",
+        "In Progress",
+        "Complete",
+        "Issue"
+      ],
+      "private": true
+    },
+    "scoreStatus": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "None",
+        "In Progress",
+        "Issue",
+        "Complete"
+      ],
+      "private": true
+    },
+    "scoreExcerpt": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "adminReview": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "Reviewed",
+        "Issue",
+        "Complete"
+      ]
+    },
+    "timeSignatures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::time-signature.time-signature",
+      "inversedBy": "works"
+    },
+    "keySignatures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::key-signature.key-signature",
+      "inversedBy": "works"
+    },
+    "notesForAdmin": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text",
+      "maxLength": 2000
+    },
+    "studentAges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student-age.student-age",
+      "inversedBy": "works"
+    },
+    "studentTypes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student-type.student-type",
+      "inversedBy": "works"
+    },
+    "elementStatus": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Elements Missing"
+      ]
+    },
+    "adminNotes": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "tempoIndications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tempo-indication.tempo-indication",
+      "inversedBy": "works"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "works"
+    },
+    "newElementSuggestions": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "maxLength": 200
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "works"
+    },
+    "isFeatured": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
+    },
+    "popularPiecesIndex": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer"
+    },
+    "composers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composer.composer",
+      "inversedBy": "works"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "imageSEO": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "works"
+    },
+    "promoText": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "urlSpotify": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "urlAppleMusic": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "DM_Status": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "Reviewed",
+        "Issue"
+      ]
+    },
+    "DM_Notes": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "edits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::edit.edit",
+      "mappedBy": "work"
+    },
+    "eras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::era.era",
+      "mappedBy": "works"
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::favorite.favorite",
+      "mappedBy": "work"
+    },
+    "purchase_links": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::purchase-link.purchase-link",
+      "inversedBy": "works"
+    },
+    "list_works": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list-work.list-work",
+      "mappedBy": "work"
+    },
+    "holidays": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::holiday.holiday",
+      "mappedBy": "works"
+    },
+    "instrumentations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::instrumentation.instrumentation",
+      "mappedBy": "works"
+    }
+  }
+}

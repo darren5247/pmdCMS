@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_works",
+  "info": {
+    "singularName": "list-work",
+    "pluralName": "list-works",
+    "displayName": "ListWork",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "work": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work.work",
+      "inversedBy": "list_works"
+    },
+    "order": {
+      "type": "integer",
+      "min": 0
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "list": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::list.list",
+      "inversedBy": "list_works"
+    }
+  }
+}

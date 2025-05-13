@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_sponsored_work_sponsored_works",
+  "info": {
+    "displayName": "Sponsored Work",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Global",
+        "Elements",
+        "Level",
+        "Era",
+        "Moods",
+        "Styles",
+        "Themes",
+        "Holiday ",
+        "Instrumentation",
+        "Student Ages",
+        "Student Types",
+        "Has Teacher Duet",
+        "Has Lyrics"
+      ]
+    },
+    "work": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work.work"
+    },
+    "position": {
+      "type": "integer",
+      "required": true
+    },
+    "categoryValue": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_notification_work_preferences",
+  "info": {
+    "displayName": "Work Notification Preferences",
+    "description": "Detailed work notification preferences"
+  },
+  "options": {
+    "setDefaultValue": {
+      "newWorkAdded": true,
+      "workPublishStatusChanged": true,
+      "workEdited": true,
+      "editStatusChanged": true
+    }
+  },
+  "attributes": {
+    "newWorkAdded": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "workPublishStatusChanged": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "workEdited": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "editStatusChanged": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+} 

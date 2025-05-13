@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "key_signatures",
+  "info": {
+    "singularName": "key-signature",
+    "pluralName": "key-signatures",
+    "displayName": "Key Signature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "keySignatures"
+    }
+  }
+}

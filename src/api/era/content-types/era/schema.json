@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eras",
+  "info": {
+    "singularName": "era",
+    "pluralName": "eras",
+    "displayName": "Era",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "inversedBy": "eras"
+    },
+    "visibility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::visibility.visibility",
+      "inversedBy": "eras"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "eras"
+    },
+    "composers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composer.composer",
+      "inversedBy": "eras"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_notification_edit_preferences",
+  "info": {
+    "displayName": "Edit Notification Preferences",
+    "description": "Detailed edit notification preferences"
+  },
+  "options": {
+    "setDefaultValue": {
+      "workEdited": true,
+      "editStatusChanged": true
+    }
+  },
+  "attributes": {
+    "workEdited": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "editStatusChanged": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+} 

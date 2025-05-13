@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscription_reminders",
+  "info": {
+    "singularName": "subscription-reminder",
+    "pluralName": "subscription-reminders",
+    "displayName": "Subscription Reminder",
+    "description": "Track sent subscription renewal reminders"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "subscriptionId": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "sentAt": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+} 

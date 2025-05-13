@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instrumentations",
+  "info": {
+    "singularName": "instrumentation",
+    "pluralName": "instrumentations",
+    "displayName": "Instrumentation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "instrumentations"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "inversedBy": "instrumentations"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedbacks",
+  "info": {
+    "singularName": "feedback",
+    "pluralName": "feedbacks",
+    "displayName": "Feedback",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feedbackText": {
+      "type": "text"
+    },
+    "feedbackType": {
+      "type": "string"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "feedbacks"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "inversedBy": "feedbacks"
+    },
+    "composers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composer.composer",
+      "inversedBy": "feedbacks"
+    },
+    "publishers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publisher.publisher",
+      "inversedBy": "feedbacks"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "feedbacks"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "inversedBy": "feedbacks"
+    },
+    "feedbackEmail": {
+      "type": "string"
+    },
+    "feedbackStatus": {
+      "type": "enumeration",
+      "enum": [
+        "For Review",
+        "In Progress",
+        "Closed"
+      ]
+    },
+    "feedbackNotes": {
+      "type": "text"
+    }
+  }
+}

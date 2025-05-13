@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true,
+      "maxLength": 140
+    },
+    "descriptionSEO": {
+      "type": "text",
+      "maxLength": 255,
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 140,
+      "required": true
+    },
+    "showLastUpdated": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "pages"
+    },
+    "hideName": {
+      "type": "boolean"
+    },
+    "widthFull": {
+      "type": "boolean"
+    },
+    "showBackBar": {
+      "type": "boolean",
+      "default": true
+    },
+    "showBackBarShare": {
+      "type": "boolean",
+      "default": true
+    },
+    "showBackBarFeedback": {
+      "type": "boolean",
+      "default": true
+    },
+    "isUserLoggedIn": {
+      "type": "boolean"
+    },
+    "isUserPMDPlus": {
+      "type": "boolean"
+    }
+  }
+}

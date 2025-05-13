@@ -1,0 +1,37 @@
+name: Deploy Prod
+
+on:
+  push:
+    branches:
+    - prod
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4.2.2
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v4.2.0
+      with:
+        node-version: "18"
+
+    - name: Deploy Prod to Remote Server using SSH
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd pmdCMS-prod
+          git stash
+          git stash clear
+          git pull
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh 
+          npm install
+          npm run build
+          pm2 restart "pmdCMS-prod"
