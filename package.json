@@ -18,7 +18,7 @@
     "assert": "^2.1.0",
     "pg": "^8.13.3",
     "pg-connection-string": "^2.7.0",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.2",
     "strapi-provider-email-brevo": "^1.0.4",
     "stripe": "^17.6.0",
     "xlsx": "^0.18.5",
